@@ -1,0 +1,48 @@
+------------------------------------------
+2009-12-17
+Config Utility Version 1.16.1
+Device Firmware Version 16a
+------------------------------------------
+General:
+- renamed project to UsbThumbImu (from Starlino Gamepad)
+
+Firmware:
+- added support for 18F14K50/18F13K50 devices
+- disabled support for PIC18F2550/PIC18F4550 devices (to be re-implemented)
+- disabled support for gyro (to be re-implemented)
+
+PC Software:
+- added VDD option
+- added Gyro Noise/Drift option
+- added swap buttons option
+
+------------------------------------------
+2009-09-25
+Config Utility Version 1.0.0
+Device Firmware Version 1.5
+------------------------------------------
+
+- device supports a wide range of accelerometers and gyroscopes
+- implements smoothing filtering algorithm 
+- implements algorithm for combining gyroscope and accelerometer data
+- HID USB interface makes the device compatible virtually with all modern operating systems (Mac,Windows,Linux)
+- configuration utility (for Windows only for now)
+- adjustable smoothing and scale factor for outputs
+- configurable sensibility for accelerometer and gyroscope (can be set per axis)
+- configurable midpoint (0g voltage) for accelerometer (can be set per axis)
+- auto-find gyroscope midpoint (0 deg/s voltage)
+- you can use separate accelerometer/gyroscopes for different axis
+- Z axis not implemented in this release
+- configurable analog input ports AN0-AN5 for each axis (please note 18F2550 does not have AN5 input , but 18F4550 does)
+- ability to invert axis
+- capture output and raw adc data into a comma separated values file (.csv)
+- charting feature of all inputs/outputs 
+- graphical display of output and buttons
+- supports up to 8 buttons
+- configuration is stored in device EEPROM
+- it is possible to use accelerometer alone on any axis (1, 2 or 3-axis) in this case set Smoothing to 0-10 value
+- it is possible to gyro alone on any axis (1,2 or 3 axis) in this case set Smoothing to 100-255 , please note that the output will snap to middle after a while since gyro only provides rate information
+- it is possible to use to use gyro and accelerometer on any axis (RECOMMENDED) in this case set smoothing to 20-100 value
+- you can use multiple accelerometers or gyroscopes
+- you can orient gyro or accelerometer as you like (but aligned to 90 degrees increments)
+- you can connect your gyro and accelerometer outputs to any of the AN0-AN4 ports (for PIC18F2550).
